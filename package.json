@@ -1,0 +1,11 @@
+{
+    "name": "isomorphic-flux-react-systemjs",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "node --harmony app.js"
+    },
+    "dependencies": {
+        "babel": "~5.8.21"
+    }
+}
