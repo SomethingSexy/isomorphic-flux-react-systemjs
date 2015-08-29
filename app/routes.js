@@ -1,7 +1,7 @@
-var React = require('react');
-var { DefaultRoute, Route, NotFoundRoute } = require('react-router');
+import React from 'react';
+import { DefaultRoute, Route, NotFoundRoute } from 'react-router';
 
-module.exports = (token) => {
+export default (token) => {
 
   // hand-wavy dependency injection
   var CreateContact = require('./handlers/CreateContact');

@@ -46,8 +46,6 @@ var renderApp = (req, token, cb) => {
   });
 };
 
-
-// Update this to use koa.js
 var app = http.createServer((req, res) => {
   var cookies = new Cookies(req, res);
   var token = cookies.get('token') || uuid();
