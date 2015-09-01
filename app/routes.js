@@ -2,9 +2,8 @@ import React from 'react';
 import { DefaultRoute, Route, NotFoundRoute } from 'react-router';
 
 export default (token) => {
-
   // hand-wavy dependency injection
-  var CreateContact = require('./handlers/CreateContact');
+  const CreateContact = require('./handlers/CreateContact');
   CreateContact.token = token;
 
   return [

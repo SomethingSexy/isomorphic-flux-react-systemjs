@@ -5,17 +5,17 @@ import fetchData from './utils/fetchData';
 import rehydrate from './utils/rehydrate';
 import { EventEmitter } from 'events';
 
-var loadingEvents = new EventEmitter();
-var token = rehydrate();
+const loadingEvents = new EventEmitter();
+const token = rehydrate();
 
-var renderState = {
+const renderState = {
   element: document.getElementById('app'),
   Handler: null,
   routerState: null
 };
 
-var render = () => {
-  var { element, Handler, routerState } = renderState;
+const render = () => {
+  const { element, Handler, routerState } = renderState;
   loadingEvents.emit('start');
   fetchData(token, routerState).then((data) => {
     loadingEvents.emit('end');
@@ -23,7 +23,7 @@ var render = () => {
   });
 };
 
-Router.run(getRoutes(token), Router.HistoryLocation, function(Handler, routerState) {
+Router.run(getRoutes(token), Router.HistoryLocation, (Handler, routerState) => {
   renderState.Handler = Handler;
   renderState.routerState = routerState;
   render();
