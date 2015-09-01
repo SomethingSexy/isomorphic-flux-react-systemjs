@@ -1,3 +1,4 @@
 node_modules
 public/js
 jspm_packages
+npm-debug.log
