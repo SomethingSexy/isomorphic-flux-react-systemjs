@@ -11,7 +11,7 @@ gulp.task('build', function() {
       builder.config({
         // baseURL: 'build'
       });
-      return builder.buildSFX('app/client.js', 'public/js/app.js', {
+      return builder.buildSFX('app/client.js', 'public/js/main.js', {
         sourceMaps: false,
         minify: false,
         mangle: false

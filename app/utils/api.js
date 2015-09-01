@@ -1,6 +1,6 @@
-import when = require('when');
-import axios = require('axios');
-import cache = require('./cache');
+import when from 'when';
+import axios from 'axios';
+import cache from './cache';
 
 const Promise = when.Promise;
 

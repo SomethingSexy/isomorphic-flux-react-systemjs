@@ -5,24 +5,22 @@ var ensureTokenKey = (token) => {
     cache[token] = {};
 };
 
-export var set = (token, key, data) => {
-  ensureTokenKey(token);
-  cache[token][key] = data;
+export default {
+  set: (token, key, data) => {
+    ensureTokenKey(token);
+    cache[token][key] = data;
+  },
+  get: (token, key) => {
+    ensureTokenKey(token);
+    return cache[token][key];
+  },
+  clean: (token) => {
+    var data = cache[token];
+    delete cache[token];
+    return data;
+  },
+  expire: (token, key) => {
+    ensureTokenKey(token);
+    delete cache[token][key];
+  }
 };
-
-export var get = (token, key) => {
-  ensureTokenKey(token);
-  return cache[token][key];
-};
-
-export var clean = (token) => {
-  var data = cache[token];
-  delete cache[token];
-  return data;
-};
-
-export var expire = (token, key) => {
-  ensureTokenKey(token);
-  delete cache[token][key];
-};
-
